@@ -83,11 +83,35 @@ export class FormGroup {
 
 
 
+
+
+
+
     /**
      * Checks if all the controls are valid.
      * @returns boolean
      */
     #is_valid() { return this.controls.every((control) => control.valid) }
+
+
+
+
+
+
+
+    /**
+     * Handles the submission state of the form.
+     */
+    submission_started() {
+        this.controls.forEach((control) => control.el.setAttribute("disabled", "true"));
+        this.#submit_button_el.setAttribute("disabled", "true");
+        this.#submit_button_el.innerText = "ADDING BOOK..."
+    }
+    submission_ended() {
+        this.controls.forEach((control) => control.el.removeAttribute("disabled", "true"));
+        this.#submit_button_el.removeAttribute("disabled", "true");
+        this.#submit_button_el.innerText = "ADD BOOK";
+    }
 
 
 

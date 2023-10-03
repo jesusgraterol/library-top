@@ -9,6 +9,9 @@
 /* Material Icons */
 @import url("modules/material_icons.css");
 
+/* Spinner */
+@import url("modules/spinner.css");
+
 
 
 
@@ -19,9 +22,10 @@
 /***********
  * GLOBALS *
  ***********/
- :root {
+:root {
     --text-color: #312e2e;
     --error-color: #B71C1C;
+    
 }
 
 
@@ -49,7 +53,7 @@ ul li .md-icon, ol li .md-icon { vertical-align: middle;}
  ************/
 body {
     font-family: "Montserrat", "Roboto", sans-serif;
-
+    background-color: #f7f1f1;
 }
 
 
@@ -68,8 +72,286 @@ body {
 
 
 
+/**********
+ * HEADER *
+ **********/
+header {
+    padding:15px;
+    background-color: black;
+    color:white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.20);
+}
+header h1{ 
+    margin-left: 7px;
+}
+header button {
+    margin-left:auto;
+    padding:7px;
+    background-color: transparent;
+    color:white;
+    font-weight: bold;
+    border:1px solid white;
+}
+header button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
 
 
+
+
+
+
+/***********
+ * SPINNER *
+ ***********/
+#spinner_container {
+    position: absolute;
+    top: calc(50% - 22px);
+    left: calc(50% - 22px);
+    display: none;
+}
+
+
+
+
+
+/***********
+ * No Data *
+ ***********/
+#no_data_found {
+    text-align: center;
+    color: #7a7474;
+    margin-top: 100px;
+    display: none;
+}
+
+
+
+
+
+/**************
+ * BOOKS GRID *
+ **************/
+main {
+    padding:30px;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+
+/* Book Card*/
+main .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding:15px;
+    background-color: white;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
+}
+
+/* Card Content */
+main .card .name {
+    font-size:1.2rem;
+    font-weight:bold;
+}
+main .card .author {
+    font-size:0.7rem;
+    color: #7a7474;
+    margin-top:5px;
+}
+main .card .description {
+    font-size:0.9rem;
+    color: #4e4a4a;
+    margin-top: 12px;
+}
+
+/* Card Footer */
+main .card .footer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 15px;
+    flex:1;
+}
+main .card .footer button {
+    background-color: transparent;
+}
+main .card .footer button:hover{ 
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+
+/* Read State */
+main .card.read {
+    opacity: 0.75;
+}
+
+
+
+
+
+
+
+
+/**********
+ * DIALOG *
+ **********/
+dialog {
+    padding: 15px;
+    margin:auto;
+}
+dialog .header {
+    display: flex;
+    align-items: center;
+}
+dialog .header p {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+dialog .header a {
+    margin-left: auto;
+    color: var(--text-color);
+}
+dialog .header a:focus {
+    outline: none;
+}
+dialog .header a:hover {
+    opacity: 0.8;
+}
+dialog::backdrop {
+    background-color:rgba(0,0,0,0.4);
+}
+
+
+
+
+
+
+
+/******************
+ * FORM CONTAINER *
+ ******************/
+.form {
+    
+}
+
+.form .form-row {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+
+/* Form Control */
+.form .form-row .form-control {
+    padding: 15px 5px 15px 5px;
+    flex: 1;
+}
+.form .form-row .form-control input,
+.form .form-row .form-control textarea {
+    width: 100%;
+    border:0px;
+    background-color: inherit;
+    border-bottom: 1px solid var(--text-color);
+    padding:7px;
+    margin-top: 10px;
+    /* border-radius: 4px; */
+}
+
+.form .form-row .form-control textarea {
+    resize: vertical;
+}
+
+.form .form-row .form-control input:focus,
+.form .form-row .form-control input:active,
+.form .form-row .form-control textarea:focus,
+.form .form-row .form-control textarea:active {
+    outline: none;
+    border-bottom: 2px solid var(--text-color);
+    margin-bottom: -2px;
+}
+.form .form-row .form-control label {
+    display: block;
+}
+.form .form-row .form-control label:focus-within { font-weight: bold;}
+
+
+/* Form Control Error */
+.form .form-row .form-control .error-color {
+    color: var(--error-color);
+}
+.form .form-row .form-control input.errored,
+.form .form-row .form-control textarea.errored { 
+    border-bottom: 2px solid var(--error-color);
+    margin-bottom: -2px;
+}
+.form .form-row .form-control .error {
+
+}
+.form .form-row .form-control .error .md-icon {vertical-align: middle;font-size:1rem;}
+.form .form-row .form-control .error {
+    font-size: 0.8rem;
+    color: var(--error-color);
+    margin-top:5px;
+    visibility: hidden;
+}
+
+
+
+/* Form Submission */
+.form button {
+    padding:15px;
+    color:white;
+    background-color: var(--text-color);
+    font-weight: bold;
+    width: 100%;
+}
+.form button:hover,
+.form button:active,
+.form button:focus { background-color: #000000; }
+.form button:hover { cursor: pointer;}
+.form button:focus { outline: none; }
+.form button:disabled {
+    cursor: not-allowed;
+    background-color: #a09a9a;
+}
+
+
+
+
+
+
+
+
+
+
+
+/**********
+ * Toastr *
+ **********/
+.toastr {
+    position:fixed;
+    bottom: 15px;
+    color:white;
+    display: flex;
+    align-items: center;
+    padding:15px;
+    width: 400px;
+    margin-left: calc(50% - 200px);
+    visibility: hidden;
+}
+.toastr.error { background-color: var(--error-color); }
+.toastr.success { background-color: #004D40; }
+.toastr.info { background-color: #01579B; }
+.toastr.warning { background-color: #E65100; }
+.toastr p { margin-left: 7px; }
 
 
 
@@ -146,6 +428,24 @@ body {
  * SCREEN: 480px to lower resolution mobiles
  */
 @media (max-width: 480px) {
+    /* Header */
+    header h1{ margin-left: 0px; font-size:1.5rem; }
+    header .md-icon.md-48 { font-size: 36px;}
+    header button { padding:5px; font-size:0.8rem; }
 
 
+    /* Main Content */
+    main {
+        padding:15px;
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+       /*  gap: 15px; */
+    }
+
+
+
+    /* Toastr */
+    .toastr {
+        width: 250px;
+        margin-left: calc(50% - 125px);
+    }
 }

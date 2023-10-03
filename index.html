@@ -1,36 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
-    <!-- Charset -->
-    <meta charset="UTF-8">
+    <head>
 
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Charset -->
+        <meta charset="UTF-8">
 
-    <!-- Title -->
-    <title>Library</title>
+        <!-- Viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <!-- Title -->
+        <title>Library</title>
 
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#000000">
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="stylesheets/app.css">
+        <!-- Theme Color -->
+        <meta name="theme-color" content="#000000">
 
-    <!-- Script -->
-    <script type="module" src="scripts/app.js" defer></script>
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="stylesheets/app.css">
 
-</head>
-<body>
-    
-    <!-- App Container -->
-    <div class="app-container">
+        <!-- Script -->
+        <script type="module" src="scripts/app.js" defer></script>
+
+    </head>
+    <body>
+        
+        <!-- App Container -->
+        <div class="app-container">
+
+            <!-- Header -->
+            <header>
+
+                <span class="md-icon md-48">book_2</span>
+
+                <h1>Library</h1>
+
+                <button id="add_book_button">ADD BOOK</button>
+
+            </header>
+
+            <!-- Spinner Container -->
+            <div id="spinner_container">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
 
 
-    </div>
+            <!-- No Data Found -->
+            <p id="no_data_found">No books were found</p>
 
-</body>
+            <!-- Main Container -->
+            <main id="main"><!-- Handled by books.js --></main>
+
+
+            <!-- Form Modal -->
+            <dialog id="modal" class="form">
+
+                <div class="header">
+                    <p>Book Form</p>
+                    <a href="javascript:;" id="modal_close_button" tabindex="-1">
+                        <span class="md-icon">close</span>
+                    </a>
+                </div>
+
+                <form id="form" novalidate>
+
+                    <div class="form-row">
+                        <div class="form-control">
+                            <label for="author" id="author_label">Author*
+                                <input type="text" name="author" id="author" autofocus>
+                            </label>
+                            <p id="author_error" class="error">
+                                <span class="md-icon">error</span> Enter a valid author
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-control">
+                            <label for="name" id="name_label">Name*
+                                <input type="text" name="name" id="name">
+                            </label>
+                            <p id="name_error" class="error">
+                                <span class="md-icon">error</span> Enter a valid name
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-control">
+                            <label for="description" id="description_label">Description*
+                                <textarea name="description" id="description"></textarea>
+                            </label>
+                            <p id="description_error" class="error">
+                                <span class="md-icon">error</span> Enter a valid description
+                            </p>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submit_button" disabled>ADD BOOK</button>
+                </form>
+
+            </dialog>
+
+
+
+            <!-- Toastr -->
+            <div id="toastr" class="toastr">
+                <span class="md-icon" id="toastr_icon"></span> <p id="toastr_text"></p>
+            </div>
+
+        </div>
+
+    </body>
+
 </html>
