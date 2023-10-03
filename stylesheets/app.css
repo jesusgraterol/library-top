@@ -1,0 +1,151 @@
+/***********
+ * IMPORTS *
+ ***********/
+ 
+
+/* Font */
+@import url("modules/font.css");
+
+/* Material Icons */
+@import url("modules/material_icons.css");
+
+
+
+
+
+
+
+
+/***********
+ * GLOBALS *
+ ***********/
+ :root {
+    --text-color: #312e2e;
+    --error-color: #B71C1C;
+}
+
+
+
+
+
+
+/*************
+ * SANITIZER *
+ *************/
+*, *::before, *::after { box-sizing: border-box; border:none; background-repeat: no-repeat; padding:0; margin: 0; }
+html {  word-break: break-word; scroll-behavior: smooth; color: var(--text-color)}
+img { max-width: 100%; }
+ul,ol { list-style: none;padding-left:0;}
+ul li, ol li { margin: 10px 0 10px 0; }
+ul li .md-icon, ol li .md-icon { vertical-align: middle;}
+.truncate { white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+
+
+
+
+
+/************
+ * APP BODY *
+ ************/
+body {
+    font-family: "Montserrat", "Roboto", sans-serif;
+
+}
+
+
+
+
+/*****************
+ * APP CONTAINER *
+ *****************/
+.app-container {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************
+ * RESPONSIVE MEDIA QUERIES *
+ ****************************/
+
+
+
+/*
+ * DEVICE: Desktops
+ * SCREEN: 1281px to higher resolution desktops
+ */
+@media (min-width: 1281px) {
+
+
+
+}
+ 
+ 
+/*
+ * DEVICE: Laptops, Desktops
+ * SCREEN: B/w 1025px to 1280px
+ */
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+
+
+}
+ 
+ 
+/*
+ * DEVICE: Tablets, Ipads (portrait)
+ * SCREEN: B/w 768px to 1024px
+ */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+}
+ 
+ 
+/*
+ * DEVICE: Tablets, Ipads (landscape)
+ * SCREEN: B/w 768px to 1024px
+ */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+
+}
+ 
+ 
+/*
+ * DEVICE: Low Resolution Tablets, Mobiles (Landscape)
+ * SCREEN: B/w 481px to 767px
+ */
+@media (min-width: 481px) and (max-width: 767px) {
+
+
+}
+
+ 
+ 
+/*
+ * DEVICE: Most of the Smartphones Mobiles (Portrait)
+ * SCREEN: 480px to lower resolution mobiles
+ */
+@media (max-width: 480px) {
+
+
+}
