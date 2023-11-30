@@ -1,14 +1,117 @@
-# Library Project
+# Etch-a-Sketch
 
-This repository implements [The Odin Project's](https://www.theodinproject.com/) Library 
-Project with Vanilla CSS & JavaScript. For more information about this project, please visit:
+![Library](./readme-assets/screenshot-01.png)
 
-[https://www.theodinproject.com/lessons/node-path-javascript-library](https://www.theodinproject.com/lessons/node-path-javascript-library)
+This application enables users to add their favorite books to a library and it is the submission for [The Odin Project: Library](https://www.theodinproject.com/lessons/node-path-javascript-library). The key features are:
 
-A live demo of this solution can be accessed here:
+- Books and their essential information can be added
+- The state of the books can be modified to separate the ones that have been already read
+- The books can be deleted
+- Cross-Platform Compatibility
 
-[https://jesusgraterol.github.io/library_top/](https://jesusgraterol.github.io/library_top/)
 
-A local instance can be served with:
 
-`python3 -m http.server`
+
+
+## Live Demo
+
+[Library](https://jesusgraterol.github.io/library-top/)
+
+
+
+
+
+## Getting Started
+
+### Requirements
+
+- GIT
+- Python ^v3
+
+### Installation
+
+1) Clone the repository
+```bash
+git clone git@github.com:jesusgraterol/library-top.git
+```
+
+
+
+
+
+## Usage
+
+1) Run a local server with:
+
+```bash
+python3 -m http.server
+```
+
+2) Access the app through: [http://localhost:8000/](http://localhost:8000/)
+
+
+
+
+## Build Process
+
+N/A
+
+
+
+
+
+## Deployment
+
+Deploys to **Github Pages** automatically when commits are pushed into the `main` branch.
+
+
+
+
+
+
+## Built With
+
+- HTML5
+- CSS3
+- JavaScript
+
+
+
+
+
+## Running the Tests
+
+```bash
+# Unit Tests
+N/A
+
+# Integration Tests
+N/A
+
+# E2E Tests
+N/A
+```
+
+
+
+
+
+## @TODO
+
+N/A
+
+
+
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
+
+
+
+## Acknowledgments
+
+- [Google Fonts](https://fonts.google.com/icons)
